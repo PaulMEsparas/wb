@@ -11,11 +11,14 @@ const app = express();
 const port = process.env.PORT;
 
 //middleware
-app.use(express.json());
+
 // Middleware to set CORS headers
 app.use(function (req, res, next) {
   // Allow requests from any origin
-  res.setHeader("Access-Control-Allow-Origin", "https://wb-grfs.onrender.com/");
+  res.setHeader(
+    "Access-Control-Allow-Origin",
+    "https://pmwb-73z5neskw-paulms-projects.vercel.app"
+  );
 
   // Allow specific methods
   res.setHeader(
@@ -36,6 +39,7 @@ app.use(function (req, res, next) {
     next(); // Pass control to the next middleware
   }
 });
+app.use(express.json());
 
 // app.use((req, res, next) => {
 //   console.log(req.path, req.method);
