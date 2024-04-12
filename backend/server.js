@@ -4,6 +4,8 @@ const workoutRoutes = require("./routes/workouts");
 const userRoutes = require("./routes/user");
 const mongoose = require("mongoose");
 
+const cors = require("cors");
+
 //express app
 const app = express();
 
@@ -11,30 +13,31 @@ const app = express();
 const port = process.env.PORT;
 
 //middleware
+app.use(cors());
 // Middleware to set CORS headers
-app.use(function (req, res, next) {
-  // Allow requests from any origin
-  res.setHeader("Access-Control-Allow-Origin", "*");
+// app.use(function (req, res, next) {
+//   // Allow requests from any origin
+//   res.setHeader("Access-Control-Allow-Origin", "*");
 
-  // Allow specific methods
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "GET, POST, PUT, PATCH, DELETE"
-  );
+//   // Allow specific methods
+//   res.setHeader(
+//     "Access-Control-Allow-Methods",
+//     "GET, POST, PUT, PATCH, DELETE"
+//   );
 
-  // Allow specific headers
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+//   // Allow specific headers
+//   res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
 
-  // Allow credentials (if needed)
-  // res.setHeader('Access-Control-Allow-Credentials', 'true');
+//   // Allow credentials (if needed)
+//   // res.setHeader('Access-Control-Allow-Credentials', 'true');
 
-  // Handle preflight requests
-  if (req.method === "OPTIONS") {
-    res.sendStatus(200); // Respond to preflight request
-  } else {
-    next(); // Pass control to the next middleware
-  }
-});
+//   // Handle preflight requests
+//   if (req.method === "OPTIONS") {
+//     res.sendStatus(200); // Respond to preflight request
+//   } else {
+//     next(); // Pass control to the next middleware
+//   }
+// });
 
 app.use(express.json());
 
