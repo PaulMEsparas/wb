@@ -11,11 +11,10 @@ const app = express();
 const port = process.env.PORT;
 
 //middleware
-
 // Middleware to set CORS headers
 app.use(function (req, res, next) {
   // Allow requests from any origin
-  res.setHeader("Access-Control-Allow-Origin", "https://pmwb.vercel.app/");
+  res.setHeader("Access-Control-Allow-Origin", "*");
 
   // Allow specific methods
   res.setHeader(
@@ -36,6 +35,7 @@ app.use(function (req, res, next) {
     next(); // Pass control to the next middleware
   }
 });
+
 app.use(express.json());
 
 // app.use((req, res, next) => {
