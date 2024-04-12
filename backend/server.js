@@ -17,7 +17,7 @@ app.use(
   cors({
     origin: "*",
     methods: "*",
-    allowedHeaders: "*",
+    allowedHeaders: "Content-Type, Access-Control-Allow-Origin, xxx",
   })
 );
 // Middleware to set CORS headers
