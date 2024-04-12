@@ -48,8 +48,11 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to the app" });
 });
 
-app.use("/api/workouts", workoutRoutes);
-app.use("/api/user", userRoutes);
+// app.use("/api/workouts", workoutRoutes);
+// app.use("/api/user", userRoutes);
+
+app.use("/workouts", workoutRoutes);
+app.use("/user", userRoutes);
 
 //connect to database (async)
 mongoose
