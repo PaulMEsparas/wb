@@ -15,7 +15,7 @@ const port = process.env.PORT;
 //middleware
 app.use(
   cors({
-    origin: "https://pmwb-92owwvxjz-paulms-projects.vercel.app",
+    origin: "*",
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   })
