@@ -1,1 +1,1 @@
-export const apiUrl = "https://wb-grfs.onrender.com";
+export const apiUrl = "https://pm-wb.onrender.com/";
