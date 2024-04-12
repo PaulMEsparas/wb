@@ -13,7 +13,13 @@ const app = express();
 const port = process.env.PORT;
 
 //middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://pmwb-92owwvxjz-paulms-projects.vercel.app",
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  })
+);
 // Middleware to set CORS headers
 // app.use(function (req, res, next) {
 //   // Allow requests from any origin
